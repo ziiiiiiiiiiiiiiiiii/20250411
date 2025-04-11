@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="menu">
+      <ul>
+        <li><a href="#" onclick="hideIframe()">首頁</a></li>
+        <li><a href="#">自我介紹</a></li>
+        <li>
+          <a href="#">作品集</a>
+          <ul class="submenu">
+            <li><a href="#" onclick="loadIframe('https://cfchengit.github.io/20250304/')">第一周</a></li>
+            <li><a href="#" onclick="loadIframe('https://hackmd.io/@ziiiiiiiii/HkfKDZW31x')">第二周</a></li>
+            <li><a href="#" onclick="loadIframe('https://hackmd.io/@ziiiiiiiii/SkD3uXWnyg')">第三周</a></li>
+            <li><a href="#" onclick="loadIframe('https://example.com/fourth-week')">第四周</a></li>
+          </ul>
+        </li>
+        <li><a href="#">測驗卷</a></li>
+        <li><a href="#">教學影片</a></li>
+      </ul>
+    </nav>
+    <iframe id="content-frame" src="" frameborder="0"></iframe>
+    <script src="sketch.js"></script>
+    <script>
+      function loadIframe(url) {
+        const iframe = document.getElementById('content-frame');
+        iframe.src = url;
+        iframe.classList.add('visible'); // 顯示 iframe
+      }
+
+      function hideIframe() {
+        const iframe = document.getElementById('content-frame');
+        iframe.src = ''; // 清空 iframe 的內容
+        iframe.classList.remove('visible'); // 隱藏 iframe
+      }
+    </script>
+  </body>
+</html>
